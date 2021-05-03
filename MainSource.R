@@ -66,7 +66,7 @@ yTest<-TestD$Target
 lasso.mod <- glmnet(x, y, alpha=1, lambda=bestlam)
 lasso.pred <- predict(lasso.mod, newx=xTest,s=bestlam, exact = T)
 (MSElasso<-mean((lasso.pred-Test$Target)^2))
-
+(MSElasso<-mean((lasso.pred-TestD$Target)^2))   # the MSElasso worked off "TestD", of which all the variables are still int and not factors?... btw, nice job man, I wish I understood this stuff the way you do!
 
 ###########
 ### MLR ###
